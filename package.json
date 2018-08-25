@@ -1,12 +1,13 @@
 {
-  "name": "recursive-readdir-async",
+  "name": "@gerhobbelt/recursive-readdir-async",
   "version": "1.0.3",
   "description": "Module to recursive read directory async (non blocking). Must be used with Promises. Configurable, extended filtering. etc.",
-  "main": "module.min.js",
+  "main": "module.js",
   "scripts": {
     "test": "nyc mocha",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
-    "build": "uglifyjs --compress --mangle -- module.js > module.min.js"
+    "build": "uglifyjs --compress --mangle -- module.js > module.min.js",
+    "pub": "npm publish --access public"
   },
   "engines": {
     "node": ">=7.6"
