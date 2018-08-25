@@ -177,7 +177,6 @@ describe('usage', function () {
     });
     it('should normalize Windows paths on all platforms by default', async function () {
         const prom = await rra.list('.\\test\\test\\', { 'realPath': false })
-        console.error('PROM: ', prom)
         assert.ok(prom[0].path.startsWith('./test/test/folder1'), 'Backslashed paths should be normalized by default on any platform: ' + prom[0].path)
     });
     it('should include only paths that exists in settings.include', async function () {
