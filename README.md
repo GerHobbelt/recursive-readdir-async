@@ -1,6 +1,14 @@
 # recursive-readdir-async 
+
+[![Build Status](https://travis-ci.org/GerHobbelt/recursive-readdir-async.svg?branch=master)](https://travis-ci.org/GerHobbelt/recursive-readdir-async)
+[![NPM version](https://badge.fury.io/js/%40gerhobbelt%2Frecursive-readdir-async.svg)](https://badge.fury.io/js/%40gerhobbelt%2Frecursive-readdir-async)
+[![Dependency Status](https://img.shields.io/david/GerHobbelt/recursive-readdir-async.svg)](https://david-dm.org/GerHobbelt/recursive-readdir-async)
+[![GitHub license](https://img.shields.io/github/license/GerHobbelt/recursive-readdir-async.svg)](https://github.com/GerHobbelt/recursive-readdir-async/blob/master/LICENSE)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/GerHobbelt/recursive-readdir-async.svg)](http://isitmaintained.com/project/GerHobbelt/recursive-readdir-async "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/GerHobbelt/recursive-readdir-async.svg)](http://isitmaintained.com/project/GerHobbelt/recursive-readdir-async "Percentage of issues still open")
+
 NPM Module to recursive read directory async (non blocking). Returns Promise. Configurable, with callback for extended filtering and progress status. Quiet, NO dependencies.
-As non blocking module is perfect to be used in any javascript based Desktop applications.
+As non blocking module it is perfect to be used in any javascript based Desktop applications.
 >This module uses Promises and can't be used in old javascript engines.
 ## Installation
 For normal usage into a project, you must install as a NPM dependency. The next command will do all the work:
