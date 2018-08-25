@@ -1,5 +1,6 @@
 var assert = require('assert');
 const rra = require('../module.js')
+const path = require('path')
 
 // UT testing
 describe('load', function () {
@@ -156,10 +157,11 @@ describe('usage', function () {
             isOK = false
         assert.equal(isOK, true, 'something wrong')
     });
-    it('should not normalize and set realPath (only works in Windows)', async function () {
+    it('should not normalize and set realPath', async function () {
         const prom = await rra.list('.\\test\\test\\', { 'realPath': false, 'normalizePath': false })
+        console.error('PROM:', JSON.stringify(prom, null, 2))
         let isOK = true
-        if (!prom[0].path.startsWith('.\\test\\test\\folder1'))
+        if (!prom[0].path.startsWith(path.sep === '\\' ? '.\\test\\test\\folder1' : './test/test/folder1'))
             isOK = false
         assert.equal(isOK, true, 'Working in Linux? ' + prom[0].path)
     });
