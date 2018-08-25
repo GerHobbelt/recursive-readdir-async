@@ -159,11 +159,26 @@ describe('usage', function () {
     });
     it('should not normalize and set realPath', async function () {
         const prom = await rra.list('.\\test\\test\\', { 'realPath': false, 'normalizePath': false })
-        console.error('PROM:', JSON.stringify(prom, null, 2))
-        let isOK = true
-        if (!prom[0].path.startsWith(path.sep === '\\' ? '.\\test\\test\\folder1' : './test/test/folder1'))
-            isOK = false
-        assert.equal(isOK, true, 'Working in Linux? ' + prom[0].path)
+        // As we pass in a 'Windows' path in this test, we can expect quite different behaviour on different platforms:
+        if (path.sep === '\\') {
+            // Windows et al
+            assert.ok(prom[0].path.startsWith('.\\test\\test\\folder1'), 'Backslashed paths should work in Windows: ' + prom[0].path)
+        } else {
+            assert.deepEqual(prom, {
+              "error": {
+                "errno": -2,
+                "code": "ENOENT",
+                "syscall": "scandir",
+                "path": ".\\test\\test\\"
+              },
+              "path": ".\\test\\test\\"
+            }, "Backslashed paths are only supported on Windows platforms.");
+        }
+    });
+    it('should normalize Windows paths on all platforms by default', async function () {
+        const prom = await rra.list('.\\test\\test\\', { 'realPath': false })
+        console.error('PROM: ', prom)
+        assert.ok(prom[0].path.startsWith('./test/test/folder1'), 'Backslashed paths should be normalized by default on any platform: ' + prom[0].path)
     });
     it('should include only paths that exists in settings.include', async function () {
         const prom = await rra.list('./test/test', { 'mode': rra.TREE, 'ignoreFolders': false, 'include': ['/subfolder2'] })
