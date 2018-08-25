@@ -1,6 +1,7 @@
 # recursive-readdir-async 
 
 [![Build Status](https://travis-ci.org/GerHobbelt/recursive-readdir-async.svg?branch=master)](https://travis-ci.org/GerHobbelt/recursive-readdir-async)
+[![Coverage Status](https://coveralls.io/repos/github/GerHobbelt/recursive-readdir-async/badge.svg?branch=master)](https://coveralls.io/github/GerHobbelt/recursive-readdir-async?branch=master)
 [![NPM version](https://badge.fury.io/js/%40gerhobbelt%2Frecursive-readdir-async.svg)](https://badge.fury.io/js/%40gerhobbelt%2Frecursive-readdir-async)
 [![Dependency Status](https://img.shields.io/david/GerHobbelt/recursive-readdir-async.svg)](https://david-dm.org/GerHobbelt/recursive-readdir-async)
 [![GitHub license](https://img.shields.io/github/license/GerHobbelt/recursive-readdir-async.svg)](https://github.com/GerHobbelt/recursive-readdir-async/blob/master/LICENSE)
